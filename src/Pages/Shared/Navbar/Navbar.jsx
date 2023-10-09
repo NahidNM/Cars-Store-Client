@@ -117,15 +117,15 @@ const cart = [2];
                     className="ml-5 tooltip avatar "
                     data-tip={User?.displayName}
                   >
-                    <div className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                    <div className="w-12 rounded-full border-t-4 border-blue-600  ring-offset-base-100 ring-offset-2 border-b-4">
                       <img src={User?.photoURL} className="" />
                     </div>
                   </div>
                 </div>
               </>
             ) : (
-              <div className="ml-5 ">
-                <FaRegUserCircle size={46}></FaRegUserCircle>
+              <div className="ml-5 relative mb-12 mr-10">
+                <FaRegUserCircle size={46}className='border-t rounded absolute'></FaRegUserCircle>
               </div>
             )}
           </div>

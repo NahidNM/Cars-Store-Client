@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const UseCarCard = (props) => {
-    console.log(props.data);
+    // console.log(props.data);
     const {_id, carName, img, price,rating} = props.data;
-    console.log(_id)
+    // console.log(_id)
     
     return (
         

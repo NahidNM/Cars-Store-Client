@@ -19,7 +19,7 @@ useEffect(()=>{
     .then(res => res.json())
     .then(data =>{
         
-        console.log(data)
+        // console.log(data)
         setPolices(data?.filter(da=>da.category=== "Police Car"));
         setAmbulances(data.filter(da=>da.category=== "Ambulance Car"));
         setMiniCars(data.filter(da=>da.category=== "Mini Car"));
