@@ -84,7 +84,7 @@ const cart = [2];
           </NavLink>
           </li>
           <li><NavLink
-           to="/blog"
+           to="/addCar"
             className={({ isActive }) =>
               isActive
                 ? "font-medium tracking-wide  transition-colors duration-200 border px-2 rounded-md border-zinc-400 shadow-2xl bg-cyan-700 text-xl py-1"
