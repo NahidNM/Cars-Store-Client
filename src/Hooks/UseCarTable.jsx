@@ -24,8 +24,8 @@ const UseCarTable = (props) => {
         </div>
         <div className='flex items-center justify-center'>
           
-          <Link to={`/toydetails/${_id}`}>
-          <button className='px-2 py-1 text-white bg-red-400  border-2 rounded-lg md:px-4 md:py-2 hover:bg-gradient-to-r from-red-400 to-yellow-200 text-xl'>details</button>
+          <Link to={`/cardetails/${_id}`}>
+          <button className='px-2 py-1 text-xl text-white bg-red-400 border-2 rounded-lg md:px-4 md:py-2 hover:bg-gradient-to-r from-red-400 to-yellow-200'>details</button>
           </Link>
             
         </div>

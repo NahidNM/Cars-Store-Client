@@ -19,14 +19,14 @@ const cart = [2];
   
     // Header item
     const navOption = (
-      <div className="items-center gap-5  md:flex">
+      <div className="items-center gap-5 md:flex">
         <li>
           <NavLink
             to="/"
             className={({ isActive }) =>
               isActive
-                ? "font-medium tracking-wide transition-colors duration-200 border md:px-2 rounded-md border-zinc-400 shadow-2xl bg-cyan-700 text-xl text-gray-300 py-1"
-                : "hover:font-medium text-x text-zinc-800"
+                ? "font-medium tracking-wide transition-colors duration-200 border md:px-2 rounded-md border-zinc-400 shadow-2xl bg-cyan-700 text-xl  py-1 text-white"
+                : "hover:font-medium text-xl text-orange-600 font-semibold"
             }
           >
             {" "}
@@ -38,8 +38,8 @@ const cart = [2];
             to="/allCar"
             className={({ isActive }) =>
               isActive
-                ? "font-medium tracking-wide transition-colors duration-200 border px-2 rounded-md border-zinc-400 shadow-2xl bg-cyan-700 text-xl py-1"
-                : "hover:font-medium text-xl"
+                ? "font-medium tracking-wide transition-colors duration-200 border px-2 rounded-md border-zinc-400 shadow-2xl bg-cyan-700 text-xl py-1 text-white"
+                : "hover:font-medium text-xl text-orange-600 font-semibold"
             }
           >
             All Cars
@@ -47,32 +47,59 @@ const cart = [2];
         </li>
         <li>
           <NavLink
-            to="/"
+           to="/blog"
             className={({ isActive }) =>
               isActive
                 ? "font-medium tracking-wide  transition-colors duration-200 border px-2 rounded-md border-zinc-400 shadow-2xl bg-cyan-700 text-xl py-1"
-                : "hover:text-red-300 font-medium text-xl"
+                : "hover:font-medium text-xl text-orange-600 font-semibold"
             }
           >
             Blogs
           </NavLink>
         </li>
   
-        <li>
-          <Link to="/" className=''>
+        {/* <li>
+          <Link className=''>
             <div className='flex'>
-            <button className="flex items-center gap-3 bg-cyan-700 px-2 py-1 rounded-lg border-zinc-400 border">
+            <button className="flex items-center gap-3 px-2 py-1 border rounded-lg bg-cyan-700 border-zinc-400">
               <FaShoppingCart className='w-10 text-xl'></FaShoppingCart>
               <h1 className="text-xl">+{cart?.length || 0}</h1>
             </button>
             </div>
           </Link>
-        </li>
+        </li> */}
+        
+        
+        {
+          User? <>
+          <li><NavLink
+           to="/addCar"
+            className={({ isActive }) =>
+              isActive
+                ? "font-medium tracking-wide  transition-colors duration-200 border px-2 rounded-md border-zinc-400 shadow-2xl bg-cyan-700 text-xl py-1"
+                : "hover:font-medium text-xl text-orange-600 font-semibold"
+            }
+          >
+          My Car
+          </NavLink>
+          </li>
+          <li><NavLink
+           to="/blog"
+            className={({ isActive }) =>
+              isActive
+                ? "font-medium tracking-wide  transition-colors duration-200 border px-2 rounded-md border-zinc-400 shadow-2xl bg-cyan-700 text-xl py-1"
+                : "hover:font-medium text-xl text-orange-600 font-semibold"
+            }
+          >
+            Add Car
+          </NavLink></li>
+          </>:""
+        }
       </div>
     );
   
     return (
-      <div className="navbar fixed md:py-0  z-10  text-white bg-gray-300 bg-opacity-20 md:px-10  max-w-screen-xl mx-auto">
+      <div className="fixed z-10 max-w-screen-xl mx-auto text-white bg-gray-600 navbar md:py-0 md:px-10">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -117,15 +144,15 @@ const cart = [2];
                     className="ml-5 tooltip avatar "
                     data-tip={User?.displayName}
                   >
-                    <div className="w-12 rounded-full border-t-4 border-blue-600  ring-offset-base-100 ring-offset-2 border-b-4">
+                    <div className="w-12 border-t-4 border-b-4 border-blue-600 rounded-full ring-offset-base-100 ring-offset-2">
                       <img src={User?.photoURL} className="" />
                     </div>
                   </div>
                 </div>
               </>
             ) : (
-              <div className="ml-5 relative mb-12 mr-10">
-                <FaRegUserCircle size={46}className='border-t rounded absolute'></FaRegUserCircle>
+              <div className="relative mb-12 ml-5 mr-10">
+                <FaRegUserCircle size={46}className='absolute rounded'></FaRegUserCircle>
               </div>
             )}
           </div>
