@@ -1,4 +1,4 @@
-import React from 'react';
+import { Quote } from "lucide-react";
 
 const ReviewCardCar = ({review}) => {
     const { carName, message, shortDescription, img } = review;
