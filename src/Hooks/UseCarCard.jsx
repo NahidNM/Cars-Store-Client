@@ -9,10 +9,10 @@ const UseCarCard = (props) => {
     
     return (
         
-        <div data-aos="zoom-in-up" className="pt-4 text-white bg-gray-600 shadow-xl card">
+        <div data-aos="zoom-in-up" className="pt-4 mx-auto text-white bg-gray-600 shadow-xl w-96 card md:w-80">
         
         <figure className="pt-0 ">
-        <img src={img} alt="Shoes" className="w-64 mx-0 rounded-xl" />
+        <img src={img} alt="Shoes" className="mx-0 w-72 rounded-xl" />
         </figure>
         
         <div className="pt-0 mt-2 font-semibold card-body ">
@@ -28,10 +28,18 @@ const UseCarCard = (props) => {
           />
         </div>
           <p>Price : {price}</p>
+          
+        <div className='flex items-center justify-between '>
         <div className="card-actions">
         <Link to={`/cardetails/${_id}`}>
-                <button className='px-4 py-2 text-xl bg-red-400 rounded-lg hover:bg-gradient-to-r from-red-400 to-yellow-200'>view details</button>
+                <button className='px-4 py-2 text-xl bg-red-400 rounded-lg hover:bg-gradient-to-r from-red-400 to-yellow-200'>Add to Cart</button>
          </Link>
+        </div>
+        <div className="card-actions">
+        <Link to={`/cardetails/${_id}`}>
+                <button className='px-4 py-2 text-xl bg-red-400 rounded-lg hover:bg-gradient-to-r from-red-400 to-yellow-200'>Details</button>
+         </Link>
+        </div>
         </div>
         </div>
         </div>

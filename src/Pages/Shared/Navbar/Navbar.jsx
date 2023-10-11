@@ -73,7 +73,7 @@ const cart = [2];
         {
           User? <>
           <li><NavLink
-           to="/addCar"
+           to="/myCar"
             className={({ isActive }) =>
               isActive
                 ? "font-medium tracking-wide  transition-colors duration-200 border px-2 rounded-md border-zinc-400 shadow-2xl bg-cyan-700 text-xl py-1"
@@ -99,7 +99,7 @@ const cart = [2];
     );
   
     return (
-      <div className="fixed z-10 max-w-screen-xl mx-auto text-white bg-gray-600 navbar md:py-0 md:px-10">
+      <div className="fixed z-10 mx-auto text-white bg-gray-600 md:max-w-screen-xl navbar md:py-0 md:px-10">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -120,7 +120,7 @@ const cart = [2];
             </label>
             <ul
               tabIndex={0}
-              className="p-2 mt-3 text-white bg-black shadow menu menu-sm dropdown-content rounded-box"
+              className="p-2 mt-3 text-white bg-black shadow w-28 menu menu-sm dropdown-content rounded-box"
             >
               {navOption}
             </ul>
@@ -136,7 +136,7 @@ const cart = [2];
           <ul className="px-1 menu menu-horizontal">{navOption}</ul>
         </div>
         <div className="text-white navbar-end">
-          <div className="flex items-center gap-2 md:gap-4 md:mx-10 md:text-xl">
+          <div className="flex items-center gap-3 md:gap-4 md:mx-10 md:text-xl">
             {User ? (
               <>
                 <div className="flex items-center gap-2 ">
@@ -151,15 +151,15 @@ const cart = [2];
                 </div>
               </>
             ) : (
-              <div className="relative mb-12 ml-5 mr-10">
+              <div className="relative mb-12 mr-10 md:ml-5">
                 <FaRegUserCircle size={46}className='absolute rounded'></FaRegUserCircle>
               </div>
             )}
           </div>
-          <div>
+          <div className='ml-4'>
             {User ? (
               <>
-                <button onClick={handleLogOut} className="px-4 py-2 text-xl bg-red-400 rounded-lg hover:bg-gradient-to-r from-red-400 to-yellow-200">
+                <button onClick={handleLogOut} className="px-4 py-2 text-xl rounded-lg md:md:bg-red-400 hover:bg-gradient-to-r from-red-400 to-yellow-200">
                   LogOut
                 </button>
               </>

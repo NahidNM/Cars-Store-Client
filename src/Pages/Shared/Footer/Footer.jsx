@@ -2,7 +2,7 @@ import { FiFacebook, FiLinkedin, FiYoutube } from "react-icons/fi";
 
 const Footer = () => {
     return (
-        <div className='text-white bg-gray-600'>
+        <div className='max-h-screen text-white bg-gray-600'>
             <footer className="p-5 text-base text-white footer sm:p-10">
                 <div>
                 <div className="flex items-center gap-2 ">

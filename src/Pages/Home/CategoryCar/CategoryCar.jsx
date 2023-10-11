@@ -42,7 +42,7 @@ useEffect(()=>{
 </TabList>
 
 <TabPanel>
-  <div className='grid gap-5 md:grid-cols-3 my-4'>
+  <div className='grid gap-5 my-4 md:grid-cols-3'>
     { 
  polices?.map(police => <UseCarCard
     key={police._id}
@@ -53,7 +53,7 @@ useEffect(()=>{
 </TabPanel>
 
 <TabPanel>
-<div className='grid gap-5 md:grid-cols-3 my-4'>
+<div className='grid gap-5 my-4 md:grid-cols-3'>
     { 
   ambulances?.map(ambulance => <UseCarCard
     key={ambulance._id}
@@ -64,7 +64,7 @@ useEffect(()=>{
 </TabPanel>
 
 <TabPanel>
-<div className='grid gap-5 md:grid-cols-3 my-4'>
+<div className='grid gap-5 my-4 md:grid-cols-3'>
     { 
   minicars?.map(minicar => <UseCarCard
     key={minicar._id}
@@ -75,7 +75,7 @@ useEffect(()=>{
 </TabPanel>
 
 <TabPanel>
-<div className='grid gap-5 md:grid-cols-3 my-4'>
+<div className='grid gap-5 my-4 md:grid-cols-3'>
 { 
   taxis?.map(taxi => <UseCarCard
     key={taxi._id}

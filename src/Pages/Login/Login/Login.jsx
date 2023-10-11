@@ -1,7 +1,7 @@
 import { FaGoogle, FaEye } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useContext, useState } from 'react';
-import { AuthContext } from '../../Provider/AuthProvider';
+// import { AuthContext } from '../../Provider/AuthProvider';
 import Swal from 'sweetalert2';
 import UseAuth from '../../../Hooks/UseAuth';
 

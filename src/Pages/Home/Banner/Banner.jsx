@@ -24,13 +24,13 @@ console.log(cars);
     return (
         <div className="min-h-screen hero md:pt-16 " style={{backgroundImage: 'url(https://i.ibb.co/pzLgnym/car-banner.jpg)'}}>
   <div className="hero-overlay bg-opacity-60"></div>
-  <div className="text-center hero-content text-neutral-content">
+  <div className="text-center  hero-content text-neutral-content">
   <div>
   <div className=''>
       <h1 className="text-4xl font-medium uppercase drop-shadow-[3px_3px_0_rgb(234,179,8)] md:text-5xl">Hello there</h1>
       <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
       </div>
-      <div className='w-full text-white lg:-mt-36 lg:max-w-[45%] max-w-screen-xl mx-auto '>
+      <div className='w-full text-white lg:-mt-36 lg:max-w-[35%] max-w-screen-xl mx-auto md:pt-52 hidden md:block'>
       <Marquee  gradient={true}
               gradientColor={[52, 211, 153]}
               gradientWidth={100}>

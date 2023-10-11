@@ -17,11 +17,12 @@ const AddCar = () => {
         const price = form.price.value;
         const quantity = form.quantity.value;
         const img = form.photo.value;
+        const material = form.material.value;
         const rating = form.rating.value;
         const shortDescription = form.shortDescription.value;
         
         const addCar = {carName, img, addedby, email,  price, quantity, rating, shortDescription, category}
-       console.log(addtoys);
+    //    console.log(addCar);
        
        fetch("http://localhost:5000/addCar", {
         method: "POST",
@@ -34,6 +35,7 @@ const AddCar = () => {
       .then(data => {
         console.log(data)
         if(data.insertedId){
+            form.reset()
           Swal.fire({
             position: 'top-center',
             icon: 'success',
@@ -49,7 +51,7 @@ const AddCar = () => {
     
     
     return (
-        <div data-aos="zoom-in-up" className='px-5 py-8 md:m-10 bg-slate-400'>
+        <div data-aos="zoom-in-up" className=' bg-slate-500 md:pt-16'>
            <h1 className='my-5 text-2xl font-semibold text-center'>Add New Car Data</h1> 
            
      <form onSubmit={handleAddCar} className='max-w-5xl mx-auto'>
@@ -58,10 +60,10 @@ const AddCar = () => {
             
           <div className="form-control">
   <label className="label">
-    <span className="text-xl font-medium label-text">Name : </span>
+    <span className="text-xl font-medium label-text">Car Name : </span>
   </label>
   <label className=" input-group">
-    <input type="text" name='carName' placeholder="name" required className="w-full border-x-pink-950 input input-bordered" />
+    <input type="text" name='carName' placeholder="Car name" required className="w-full border-x-pink-950 input input-bordered" />
     
   </label>
 </div>
@@ -82,12 +84,23 @@ const AddCar = () => {
     <input type="email" name='email' defaultValue={User?.email} placeholder="email" className="w-full input input-bordered border-x-pink-950" />
   </label>
 </div>
+
+
+<div className="form-control">
+  <label className="label">
+    <span className="text-xl font-medium label-text ">Material: </span>
+  </label>
+  <label className="input-group">
+    <input type="text" name='material' placeholder="Car Material" required className="w-full input input-bordered border-x-pink-950" />
+    
+  </label>
+</div> 
   
 <div>
 <label className="label">
     <span className="text-xl font-medium label-text ">Sub-category :</span>
   </label>
-<select name='category' className="w-full max-w-xs select select-secondary">
+<select name='category' className="w-full select select-secondary">
   <option disabled selected>Category</option>
   <option>Police Car</option>
   <option>Taxi Car</option>
@@ -123,17 +136,9 @@ const AddCar = () => {
   </label>
 </div>
 
-           <div className="form-control">
-  <label className="label">
-    <span className="text-xl font-medium label-text ">Description : </span>
-  </label>
-  <label className="input-group">
-    <textarea  name='shortDescription'  className="w-full textarea textarea-secondary" placeholder="descrotion"></textarea>
-  </label>
-</div>    
-          </div>
-          
-          <div className=" form-control">
+
+
+<div className=" form-control">
   <label className="label">
     <span className="text-xl font-medium label-text ">Photo URL : </span>
   </label>
@@ -143,7 +148,20 @@ const AddCar = () => {
   </label>
 </div>
 
-<div className=''>
+           <div className="form-control">
+  <label className="label">
+    <span className="text-xl font-medium label-text ">Description : </span>
+  </label>
+  <label className="input-group">
+    <textarea  name='shortDescription'  className="w-full textarea textarea-secondary" placeholder="descrotion"></textarea>
+  </label>
+</div>   
+          </div>
+          
+          
+          
+
+<div className='py-5'>
               <button className='flex items-center px-5 py-2 mx-auto my-3 text-xl font-semibold text-center bg-orange-400 border rounded-lg border-stone-500 hover:bg-red-400'>Submit</button>
               </div>
            </form>
