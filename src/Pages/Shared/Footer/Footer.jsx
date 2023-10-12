@@ -2,8 +2,8 @@ import { FiFacebook, FiLinkedin, FiYoutube } from "react-icons/fi";
 
 const Footer = () => {
     return (
-        <div className='max-h-screen text-white bg-gray-600'>
-            <footer className="p-5 text-base text-white footer sm:p-10">
+        <div className='max-h-screen text-white bg-gray-600 px-5 mb-0'>
+            <footer className="md:p-5 text-base text-white footer sm:p-10">
                 <div>
                 <div className="flex items-center gap-2 ">
             <img src="https://i.ibb.co/PWTzwrq/car-logo.png" alt="" className="hidden w-10 md:block" />
@@ -40,12 +40,12 @@ const Footer = () => {
                 </label> 
                 <div className="flex flex-col items-center justify-center w-3/4 gap-2 sm:gap-0 sm:flex-row">
                     <input type="text" placeholder="username@site.com" className="w-4/5 px-3 py-2 border rounded-md outline-none border-secound border-opacity-30 sm:rounded-r-none"/> 
-                    <button className="h-full px-3 py-2 font-bold tracking-wide text-white border rounded-md bg-button hover:bg-buttonhover sm:rounded-l-none border-secound border-opacity-30">Subscribe</button>
+                    <button className="h-full px-3 py-2 font-bold tracking-wide text-white border rounded-md bg-button hover:bg-buttonhover sm:rounded-l-none border-secound border-opacity-30 bg-gray-600">Subscribe</button>
                 </div>
                 </div>
             </div>
             </footer>
-            <h1 className='pb-5 mx-5 text-xl text-center'>All Right reserved by <a className='underline font-para text-main' href="https://www.linkedin.com/in/md-nahid-hasan-94b084260/">MD NAHID HASAN</a></h1>
+            <h1 className='md:pb-5 md:mx-5 text-xl text-center bg-gray-600 text-white'>All Right reserved by <a className='underline font-para text-main' href="https://www.linkedin.com/in/md-nahid-hasan-94b084260/">MD NAHID HASAN</a></h1>
         </div>
     );
 };

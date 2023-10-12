@@ -51,7 +51,7 @@ const AddCar = () => {
     
     
     return (
-        <div data-aos="zoom-in-up" className=' bg-slate-500 md:pt-16'>
+        <div data-aos="zoom-in-up" className=' bg-slate-500 pt-16 mx-1 px-2'>
            <h1 className='my-5 text-2xl font-semibold text-center'>Add New Car Data</h1> 
            
      <form onSubmit={handleAddCar} className='max-w-5xl mx-auto'>

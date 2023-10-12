@@ -53,7 +53,7 @@ const filter = (event) => {
 
     return (
       
-         <div className='md:py-16'> 
+         <div className='pt-16'> 
         
         <div className="relative md:mx-16 md:-right-96 ">
           <div className="flex items-center my-3 bg-stone-400 rounded-xl md:mx-96">

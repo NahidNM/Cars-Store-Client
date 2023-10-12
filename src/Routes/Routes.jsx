@@ -9,6 +9,7 @@ import CarDetails from "../Pages/CarDetails/CarDetails";
 import BlogPage from "../Pages/BlogPage/BlogPage";
 import AddCar from "../Pages/AddCar/AddCar";
 import MyCar from "../Pages/MyCar/MyCar";
+import UpdateCar from "../Pages/MyCar/UpdateCar";
 
 
 
@@ -48,8 +49,14 @@ export const router = createBrowserRouter([
          },
          {
             path: 'myCar',
-            element: <MyCar></MyCar>
-         }
+            element: <MyCar></MyCar>,
+            loader: ({params})=>fetch("http://localhost:5000/allCar")
+        },
+        {
+            path: '/myCar/:id',
+            element: <UpdateCar></UpdateCar>,
+            loader: ({params})=> fetch(`http://localhost:5000/myCar/${params.id}`)  
+          },
      ]
     },
   ]);

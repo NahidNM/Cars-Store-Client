@@ -6,14 +6,16 @@ import Contract from '../Contract/Contract';
 import Gellary from '../Gellary/Gellary';
 import OfferCarProduct from '../OfferCarProduct/OfferCarProduct';
 import ReviewCar from '../ReviewCar/ReviewCar';
+import Silder from '../Silder/Silder';
 
 const Home = () => {
     return (
         <div>
         <Banner></Banner>
+        <Silder></Silder>
         <Gellary></Gellary>
         <CategoryCar></CategoryCar>
-        <ReviewCar></ReviewCar>
+        {/* <ReviewCar></ReviewCar> */}
         <OfferCarProduct></OfferCarProduct>
         <TeamMember></TeamMember>
         <Contract></Contract>

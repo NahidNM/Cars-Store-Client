@@ -9,7 +9,7 @@ const CarDetails = () => {
     const {carName, _id, price, addedby, quantity,  img, category, shortDescription, rating, material} = details;
     
     return (
-        <div className=' md:pt-1'>
+        <div className='pt-16' >
             <h1 className='my-5 text-4xl font-semibold text-center'>{carName} Car Details</h1>
             <div className="mx-auto shadow-xl card w-96 bg-base-100">
   <figure><img src={img} alt="" className='w-44 h-44' /></figure>

@@ -5,6 +5,7 @@ import UseAuth from '../../../Hooks/UseAuth';
 
 const Navbar = () => {
 const { User, logOut } = UseAuth()
+// console.log(User);
 const cart = [2];
    
    // Log Out Handle
@@ -120,7 +121,7 @@ const cart = [2];
             </label>
             <ul
               tabIndex={0}
-              className="p-2 mt-3 text-white bg-black shadow w-28 menu menu-sm dropdown-content rounded-box"
+              className="p-2 mt-3 text-white bg-black shadow w-32 menu menu-sm dropdown-content rounded-box"
             >
               {navOption}
             </ul>
@@ -141,7 +142,7 @@ const cart = [2];
               <>
                 <div className="flex items-center gap-2 ">
                   <div
-                    className="ml-5 tooltip avatar "
+                    className="ml-5 tooltip avatar tooltip-left"
                     data-tip={User?.displayName}
                   >
                     <div className="w-12 border-t-4 border-b-4 border-blue-600 rounded-full ring-offset-base-100 ring-offset-2">
