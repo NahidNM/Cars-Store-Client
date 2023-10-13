@@ -15,7 +15,7 @@ const [taxis, setTaxis] = useState();
 
 // Category data fetch
 useEffect(()=>{
-    fetch('http://localhost:5000/allCar')
+    fetch('https://cars-store-server.vercel.app/allCar')
     .then(res => res.json())
     .then(data =>{
         

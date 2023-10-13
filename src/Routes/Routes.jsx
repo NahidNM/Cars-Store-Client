@@ -10,6 +10,7 @@ import BlogPage from "../Pages/BlogPage/BlogPage";
 import AddCar from "../Pages/AddCar/AddCar";
 import MyCar from "../Pages/MyCar/MyCar";
 import UpdateCar from "../Pages/MyCar/UpdateCar";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
 
 
@@ -17,6 +18,7 @@ export const router = createBrowserRouter([
     {
      path: '/',
      element: <Main></Main>,
+     errorElement: <ErrorPage></ErrorPage>,
      children : [
         {
             path: '/',
@@ -37,7 +39,7 @@ export const router = createBrowserRouter([
         {
             path: '/cardetails/:id',
             element: <PrivateRoute><CarDetails></CarDetails></PrivateRoute>,
-            loader: ({params}) => fetch(`http://localhost:5000/allCar/${params.id}`)
+            loader: ({params}) => fetch(`https://cars-store-server.vercel.app/allCar/${params.id}`)
          },
          {
             path:'blog',
@@ -50,12 +52,12 @@ export const router = createBrowserRouter([
          {
             path: 'myCar',
             element: <MyCar></MyCar>,
-            loader: ({params})=>fetch("http://localhost:5000/allCar")
+            loader: ({params})=>fetch("https://cars-store-server.vercel.app/allCar")
         },
         {
             path: '/myCar/:id',
             element: <UpdateCar></UpdateCar>,
-            loader: ({params})=> fetch(`http://localhost:5000/myCar/${params.id}`)  
+            loader: ({params})=> fetch(`https://cars-store-server.vercel.app/myCar/${params.id}`)  
           },
      ]
     },

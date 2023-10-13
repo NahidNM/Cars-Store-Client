@@ -9,7 +9,7 @@ const UseCarCard = (props) => {
     
     return (
         
-        <div data-aos="zoom-in-up" className="pt-4 mx-auto text-white bg-gray-600 shadow-xl w-96 card md:w-80">
+        <div data-aos="zoom-in-up" className="pt-4 mx-auto text-white bg-gray-500 shadow-xl w-96 card md:w-80">
         
         <figure className="pt-0 ">
         <img src={img} alt="Shoes" className="mx-0 w-72 rounded-xl" />
@@ -32,12 +32,12 @@ const UseCarCard = (props) => {
         <div className='flex items-center justify-between '>
         <div className="card-actions">
         <Link to={`/cardetails/${_id}`}>
-                <button className='px-4 py-2 text-xl bg-red-400 rounded-lg hover:bg-gradient-to-r from-red-400 to-yellow-200'>Add to Cart</button>
+                <button className='px-4 py-2 text-xl bg-red-400 rounded-lg hover:bg-gradient-to-r from-red-400 to-yellow-200'>Add Product</button>
          </Link>
         </div>
         <div className="card-actions">
         <Link to={`/cardetails/${_id}`}>
-                <button className='px-4 py-2 text-xl bg-red-400 rounded-lg hover:bg-gradient-to-r from-red-400 to-yellow-200'>Details</button>
+                <button className='px-4 py-2 text-xl bg-red-300 rounded-lg hover:bg-gradient-to-r from-red-400 to-yellow-200'>Details</button>
          </Link>
         </div>
         </div>

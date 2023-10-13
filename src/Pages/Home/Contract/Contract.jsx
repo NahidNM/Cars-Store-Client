@@ -2,6 +2,9 @@ import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 import { useEffect } from 'react';
 import contact from '../../../../public/Contract/contact.png';
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
+import Swal from 'sweetalert2';
 
 const Contract = () => {
     useEffect(() => {
@@ -31,6 +34,37 @@ const Contract = () => {
       useEffect(() => {
         AOS.refresh();
       });
+
+// react Email
+
+
+const form = useRef();
+
+const sendEmail = (e) => {
+    e.preventDefault();
+    // console.log(import.meta.env.VITE_TEMPLATE);
+
+    emailjs.sendForm('service_ns9wuho', 'template_8nqvfcu', form.current, 'Jjpwm5-wVtkApMDEb')
+    // emailjs.sendForm(`import.meta.env.VITE_SERVICE`, `import.meta.env.VITE_TEMPLATE`, form.current, `import.meta.env.VITE_PUBLIC_KEY`)
+      .then((result) => {
+          console.log(result.text);
+
+          Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Email Send Sucessfully',
+            showConfirmButton: false,
+            timer: 1500
+          })
+form.reset()
+
+
+      }, (error) => {
+          console.log(error.text);
+      });
+  };
+
+
     return (
         <div>
            
@@ -46,28 +80,27 @@ const Contract = () => {
                     <div  data-aos="fade-down" className="">
                         <div>
                             <h2 className='py-10 text-4xl font-bold'>Contact Us</h2>
-                        </div>
-                        <div>
-                            <span className="text-sm font-bold text-gray-600 uppercase">Full Name</span>
-                            <input className="w-full p-3 mt-2 text-gray-900 bg-gray-300 rounded-lg focus:outline-none focus:shadow-outline"
-                                type="text" placeholder="" />
-                        </div>
-                        <div className="mt-8">
-                            <span className="text-sm font-bold text-gray-600 uppercase">Email</span>
-                            <input className="w-full p-3 mt-2 text-gray-900 bg-gray-300 rounded-lg focus:outline-none focus:shadow-outline"
-                                type="text" />
-                        </div>
-                        <div className="mt-8">
-                            <span className="text-sm font-bold text-gray-600 uppercase">Message</span>
-                            <textarea
-                                className="w-full h-32 p-3 mt-2 text-gray-900 bg-gray-300 rounded-lg focus:outline-none focus:shadow-outline"></textarea>
-                        </div>
-                        <div className="mt-8">
-                            <button
-                                className="w-full p-3 text-sm font-bold tracking-wide text-gray-100 uppercase bg-indigo-500 rounded-lg focus:outline-none focus:shadow-outline">
-                                Send Message
-                            </button>
-                        </div>
+                        </div>                   
+<form ref={form} onSubmit={sendEmail}>
+      <div className='mt-8'>
+      <label className="text-sm font-bold text-gray-600 uppercase">Full Name</label>
+      <input type="text" name="user_name" className="w-full p-3 mt-2 text-gray-900 bg-gray-300 rounded-lg focus:outline-none focus:shadow-outline" placeholder='Name'/>
+      </div>
+
+      <div className='mt-8'>
+      <label className="text-sm font-bold text-gray-600 uppercase">Email</label>
+      <input type="email" name="user_email" className="w-full p-3 mt-2 text-gray-900 bg-gray-300 rounded-lg focus:outline-none focus:shadow-outline"/>
+      </div>
+
+      <div className='mt-8'>
+      <label className="text-sm font-bold text-gray-600 uppercase">Message</label>
+      <textarea name="message" className="w-full h-32 p-3 mt-2 text-gray-900 bg-gray-300 rounded-lg focus:outline-none focus:shadow-outline"/>
+      </div>
+
+      <div className='mt-8'>
+      <input type="submit" value="Send" className="w-full p-3 text-sm font-bold tracking-wide text-gray-100 uppercase bg-indigo-500 rounded-lg focus:outline-none focus:shadow-outline hover:bg-indigo-300"/>
+      </div>
+    </form>
                     </div>
                 </div>
             </div>

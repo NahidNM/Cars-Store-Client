@@ -6,7 +6,7 @@ const ReviewCar = () => {
     const [isShow, setIsShow] = useState(false);
   
     useEffect(() => {
-      fetch("http://localhost:5000/allCar")
+      fetch("https://cars-store-server.vercel.app/allCar")
         .then(res => res.json())
         .then(data => setReviews(data));
     });

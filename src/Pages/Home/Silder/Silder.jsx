@@ -11,7 +11,7 @@ const Silder = () => {
 // console.log(cars);
 
   useEffect(()=>{
-    fetch('http://localhost:5000/allCar')
+    fetch('https://cars-store-server.vercel.app/allCar')
     .then(res => res.json())
     .then(data => {
         // console.log(data)

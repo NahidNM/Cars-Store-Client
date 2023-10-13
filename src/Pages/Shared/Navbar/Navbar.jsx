@@ -2,11 +2,20 @@ import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { FaShoppingCart, FaRegUserCircle } from "react-icons/fa";
 import UseAuth from '../../../Hooks/UseAuth';
+// import { Cursor, Typewriter, useTypewriter } from 'react-simple-typewriter'  
 
 const Navbar = () => {
 const { User, logOut } = UseAuth()
 // console.log(User);
 const cart = [2];
+
+
+// const [text] = useTypewriter({
+//   words: ['C', 'A', 'R','S','T','O','R','E'],
+//   loop: {}, 
+//   typeSpeed: 120,
+//   deleteSpeed: 80,
+//  })
    
    // Log Out Handle
   const handleLogOut = () => {
@@ -20,14 +29,14 @@ const cart = [2];
   
     // Header item
     const navOption = (
-      <div className="items-center gap-5 md:flex">
+      <div className="items-center gap-5 md:flex md:text-black">
         <li>
           <NavLink
             to="/"
             className={({ isActive }) =>
               isActive
                 ? "font-medium tracking-wide transition-colors duration-200 border md:px-2 rounded-md border-zinc-400 shadow-2xl bg-cyan-700 text-xl  py-1 text-white"
-                : "hover:font-medium text-xl text-orange-600 font-semibold"
+                : "hover:font-medium text-xl font-semibold"
             }
           >
             {" "}
@@ -40,7 +49,7 @@ const cart = [2];
             className={({ isActive }) =>
               isActive
                 ? "font-medium tracking-wide transition-colors duration-200 border px-2 rounded-md border-zinc-400 shadow-2xl bg-cyan-700 text-xl py-1 text-white"
-                : "hover:font-medium text-xl text-orange-600 font-semibold"
+                : "hover:font-medium text-xl font-semibold"
             }
           >
             All Cars
@@ -52,7 +61,7 @@ const cart = [2];
             className={({ isActive }) =>
               isActive
                 ? "font-medium tracking-wide  transition-colors duration-200 border px-2 rounded-md border-zinc-400 shadow-2xl bg-cyan-700 text-xl py-1"
-                : "hover:font-medium text-xl text-orange-600 font-semibold"
+                : "hover:font-medium text-xl  font-semibold"
             }
           >
             Blogs
@@ -78,7 +87,7 @@ const cart = [2];
             className={({ isActive }) =>
               isActive
                 ? "font-medium tracking-wide  transition-colors duration-200 border px-2 rounded-md border-zinc-400 shadow-2xl bg-cyan-700 text-xl py-1"
-                : "hover:font-medium text-xl text-orange-600 font-semibold"
+                : "hover:font-medium text-xl  font-semibold"
             }
           >
           My Car
@@ -89,7 +98,7 @@ const cart = [2];
             className={({ isActive }) =>
               isActive
                 ? "font-medium tracking-wide  transition-colors duration-200 border px-2 rounded-md border-zinc-400 shadow-2xl bg-cyan-700 text-xl py-1"
-                : "hover:font-medium text-xl text-orange-600 font-semibold"
+                : "hover:font-medium text-xl font-semibold"
             }
           >
             Add Car
@@ -98,9 +107,10 @@ const cart = [2];
         }
       </div>
     );
+
   
     return (
-      <div className="fixed z-10 mx-auto text-white bg-gray-600 md:max-w-screen-xl navbar md:py-0 md:px-10">
+      <div className="fixed z-10 mx-auto  bg-gradient-to-r from-gray-300 to-gray-500 md:max-w-screen-xl navbar md:py-0 md:px-10 opacity-90">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -129,11 +139,13 @@ const cart = [2];
           <div className="flex items-center gap-2 ">
             <img src="https://i.ibb.co/PWTzwrq/car-logo.png" alt="" className="hidden w-10 md:block" />
             <h1 className="hidden text-2xl font-bold normal-case md:block">
-              <span className='text-amber-500'>Cars</span><span className='text-sky-500'>Store</span>
+            {/* <span className='text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600'>{text}</span>
+            <Cursor cursorStyle=">"></Cursor> */}
+            <span className='text-amber-600'>Cars</span><span className='text-sky-500'>Store</span>
             </h1>
           </div>
         </div>
-        <div className="hidden navbar-center lg:flex">
+        <div className="hidden navbar-center lg:flex text-white">
           <ul className="px-1 menu menu-horizontal">{navOption}</ul>
         </div>
         <div className="text-white navbar-end">
@@ -153,20 +165,20 @@ const cart = [2];
               </>
             ) : (
               <div className="relative mb-12 mr-10 md:ml-5">
-                <FaRegUserCircle size={46}className='absolute rounded'></FaRegUserCircle>
+                <FaRegUserCircle size={46}className='absolute rounded text-black'></FaRegUserCircle>
               </div>
             )}
           </div>
           <div className='ml-4'>
             {User ? (
               <>
-                <button onClick={handleLogOut} className="px-4 py-2 text-xl rounded-lg md:md:bg-red-400 hover:bg-gradient-to-r from-red-400 to-yellow-200">
+                <button onClick={handleLogOut} className="px-4 py-2 text-xl rounded-lg hover:bg-gradient-to-r from-red-400 to-yellow-200 text-black ">
                   LogOut
                 </button>
               </>
             ) : (
               <div>
-                <Link to="/login" className="px-4 py-2 text-xl bg-red-400 rounded-lg hover:bg-gradient-to-r from-red-400 to-yellow-200">
+                <Link to="/login" className="px-4 py-2 text-xl text-black  rounded-lg hover:bg-gradient-to-r from-red-400 to-yellow-200 font-medium">
                   Login
                 </Link>
               </div>

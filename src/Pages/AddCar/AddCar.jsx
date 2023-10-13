@@ -24,7 +24,7 @@ const AddCar = () => {
         const addCar = {carName, img, addedby, email,  price, quantity, rating, shortDescription, category}
     //    console.log(addCar);
        
-       fetch("http://localhost:5000/addCar", {
+       fetch("https://cars-store-server.vercel.app/addCar", {
         method: "POST",
       headers: {
         "content-type" : "application/json"

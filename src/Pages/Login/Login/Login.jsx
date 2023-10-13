@@ -84,7 +84,7 @@ const Login = () => {
     
     
     return (
-        <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-pink-300 to-indigo-400 ">
+        <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-pink-300 to-indigo-400 pt-16">
         <div className="flex flex-col w-full overflow-hidden rounded-lg shadow-lg md:flex-row md:w-4/5 bg-gradient-to-r from-yellow-500 to-indigo-500">
           <div className="relative md:w-3/5">
             <img
